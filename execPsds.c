@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
 * execute - executes the opcode
 * @stack: head linked list - stack
@@ -12,9 +13,9 @@ int p_ex_pecute(char *content, stack_t **stack, unsigned int counter, FILE *file
 	instruction_t opst[] = {
 				{"push", sd_psush}, 
 				{"pall", sd_paash}, 
-/*				{"pint", f_pint},
-				{"pop", f_pop},
-				{"swap", f_swap},
+				{"pint", we_pissnt},
+				{"pop", ssf_pzzop},
+/*				{"swap", f_swap},
 				{"add", f_add},
 				{"nop", f_nop},
 				{"sub", f_sub},
@@ -53,6 +54,67 @@ int p_ex_pecute(char *content, stack_t **stack, unsigned int counter, FILE *file
 	return (1);
 }
 
+
+/**
+* free_stack - frees a doubly linked list
+* @head: head of the stack
+*/
+void ff_staack(stack_t *head)
+{
+	stack_t *aux;
+
+	aux = head;
+	while (head)
+	{
+		aux = head->next;
+		free(head);
+		head = aux;
+	}
+}
+
+/**
+ * ssf_pzzop - prints the top
+ * @head: stack head
+ * @counter: line_number
+ * Return: no return
+*/
+void ssf_pzzop(stack_t **head, unsigned int counter)
+{
+	stack_t *h;
+
+	if (*head == NULL)
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack\n", counter);
+		fclose(bus.file);
+		free(bus.content);
+		ff_staack(*head);
+		exit(EXIT_FAILURE);
+	}
+	h = *head;
+	*head = h->next;
+	free(h);
+}
+
+/**
+ * we_pissnt - prints the top
+ * @head: stack head
+ * @counter: line_number
+ * Return: no return
+*/
+void we_pissnt(stack_t **head, unsigned int counter)
+{
+	if (*head == NULL)
+	{
+		fprintf(stderr, "L%u: can't pint, stack empty\n", counter);
+		fclose(bus.file);
+		free(bus.content);
+		ff_staack(*head);
+		exit(EXIT_FAILURE);
+	}
+	printf("%d\n", (*head)->n);
+}
+
+
 /**
  * sd_psush - add node to the stack
  * @head: stack head
@@ -90,22 +152,7 @@ void sd_psush(stack_t **head, unsigned int counter)
 		aqqqddssqueue(head, n);
 }
 
-/**
-* free_stack - frees a doubly linked list
-* @head: head of the stack
-*/
-void ff_staack(stack_t *head)
-{
-	stack_t *aux;
 
-	aux = head;
-	while (head)
-	{
-		aux = head->next;
-		free(head);
-		head = aux;
-	}
-}
 
 /**
  * f_pall - prints the stack

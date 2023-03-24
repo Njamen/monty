@@ -9,6 +9,8 @@
 #include <string.h>
 #include <ctype.h>
 
+
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -61,9 +63,12 @@ extern bus_t bus;
 int p_ex_pecute(char *content, stack_t **head, unsigned int counter, FILE *file);
 void ff_staack(stack_t *head);
 void sd_psush(stack_t **head, unsigned int number);
+void we_pissnt(stack_t **head, unsigned int counter);
 void ssaddnowwwde(stack_t **head, int n);
 void aqqqddssqueue(stack_t **head, int n);
 void sd_paash(stack_t **head, unsigned int counter);
+void we_pissnt(stack_t **head, unsigned int counter);
+void ssf_pzzop(stack_t **head, unsigned int counter);
 /*ssize_t getline(char **restrict lineptr, size_t *restrict n, FILE *restrict stream);*/
 
 #endif
