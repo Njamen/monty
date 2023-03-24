@@ -5,7 +5,7 @@
  * @n: new_value
  * Return: no return
 */
-void addnode(stack_t **head, int n)
+void ssaddnowwwde(stack_t **head, int n)
 {
 
 	stack_t *new_node, *aux;
@@ -29,7 +29,7 @@ void addnode(stack_t **head, int n)
  * @head: head of the stack
  * Return: no return
 */
-void addqueue(stack_t **head, int n)
+void aqqqddssqueue(stack_t **head, int n)
 {
 	stack_t *new_node, *aux;
 

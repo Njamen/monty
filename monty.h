@@ -58,12 +58,12 @@ typedef struct bus_s
 }  bus_t;
 extern bus_t bus;
 
-int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
-void free_stack(stack_t *head);
-void f_push(stack_t **head, unsigned int number);
-void addnode(stack_t **head, int n);
-void addqueue(stack_t **head, int n);
-void f_pall(stack_t **head, unsigned int counter);
+int p_ex_pecute(char *content, stack_t **head, unsigned int counter, FILE *file);
+void ff_staack(stack_t *head);
+void sd_psush(stack_t **head, unsigned int number);
+void ssaddnowwwde(stack_t **head, int n);
+void aqqqddssqueue(stack_t **head, int n);
+void sd_paash(stack_t **head, unsigned int counter);
 /*ssize_t getline(char **restrict lineptr, size_t *restrict n, FILE *restrict stream);*/
 
 #endif

@@ -7,11 +7,11 @@
 * @content: line content
 * Return: no return
 */
-int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
+int p_ex_pecute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {
 	instruction_t opst[] = {
-				{"push", f_push}, 
-				{"pall", f_pall}, 
+				{"push", sd_psush}, 
+				{"pall", sd_paash}, 
 /*				{"pint", f_pint},
 				{"pop", f_pop},
 				{"swap", f_swap},
@@ -26,7 +26,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 				{"rotl", f_rotl},
 				{"rotr", f_rotr},
 				{"queue", f_queue},
-				{"stack", f_stack},   */
+				{"stack", ff_staack},   */
 				{NULL, NULL}
 				};
 	unsigned int i = 0;
@@ -48,18 +48,18 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 	{ fprintf(stderr, "L%d: unknown instruction %s\n", counter, op);
 		fclose(file);
 		free(content);
-		free_stack(*stack);
+		ff_staack(*stack);
 		exit(EXIT_FAILURE); }
 	return (1);
 }
 
 /**
- * f_push - add node to the stack
+ * sd_psush - add node to the stack
  * @head: stack head
  * @counter: line_number
  * Return: no return
 */
-void f_push(stack_t **head, unsigned int counter)
+void sd_psush(stack_t **head, unsigned int counter)
 {
 	int n, j = 0, flag = 0;
 
@@ -75,26 +75,26 @@ void f_push(stack_t **head, unsigned int counter)
 		{ fprintf(stderr, "L%d: usage: push integer\n", counter);
 			fclose(bus.file);
 			free(bus.content);
-			free_stack(*head);
+			ff_staack(*head);
 			exit(EXIT_FAILURE); }}
 	else
 	{ fprintf(stderr, "L%d: usage: push integer\n", counter);
 		fclose(bus.file);
 		free(bus.content);
-		free_stack(*head);
+		ff_staack(*head);
 		exit(EXIT_FAILURE); }
 	n = atoi(bus.arg);
 	if (bus.lifi == 0)
-		addnode(head, n);
+		ssaddnowwwde(head, n);
 	else
-		addqueue(head, n);
+		aqqqddssqueue(head, n);
 }
 
 /**
 * free_stack - frees a doubly linked list
 * @head: head of the stack
 */
-void free_stack(stack_t *head)
+void ff_staack(stack_t *head)
 {
 	stack_t *aux;
 
@@ -113,7 +113,7 @@ void free_stack(stack_t *head)
  * @counter: no used
  * Return: no return
 */
-void f_pall(stack_t **head, unsigned int counter)
+void sd_paash(stack_t **head, unsigned int counter)
 {
 	stack_t *h;
 	(void)counter;
